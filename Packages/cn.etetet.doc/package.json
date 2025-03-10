@@ -1,0 +1,16 @@
+﻿{
+  "name": "cn.etetet.doc",
+  "displayName": "oudeliu.doc",
+  "version": "0.0.0",
+  "unity": "2022.3",
+  "description": "文档",
+  "author": {
+    "name": "oudeliu"
+  },
+  "repository": {},
+  "relatedPackages": {},
+  "dependencies": {},
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@ET-Packages"
+  }
+}

@@ -36,6 +36,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "cn.etetet.doc": {
+      "version": "file:cn.etetet.doc",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "cn.etetet.excel": {
       "version": "file:cn.etetet.excel",
       "depth": 0,
