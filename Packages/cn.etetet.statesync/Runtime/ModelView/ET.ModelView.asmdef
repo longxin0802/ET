@@ -11,6 +11,7 @@
         "ET.UI",
         "ET.YooAssets",
         "oudeliu.doc",
+        "oudeliu.editortool",
         "Unity.Mathematics"
     ],
     "includePlatforms": [],

@@ -9,6 +9,7 @@
         "ET.Recast",
         "ET.SourceGeneratorAttribute",
         "oudeliu.doc",
+        "oudeliu.editortool",
         "Unity.Mathematics"
     ],
     "includePlatforms": [],

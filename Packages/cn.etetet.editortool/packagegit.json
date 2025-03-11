@@ -1,0 +1,11 @@
+﻿{
+    "Id": 1003,
+    "Name": "editortool",
+    "ScriptsReferences": 
+    {
+        "Hotfix": ["oudeliu.editortool"],
+        "HotfixView": ["oudeliu.editortool"],
+        "Model": ["oudeliu.editortool"],
+        "ModelView": ["oudeliu.editortool"]
+    }
+}
