@@ -9,10 +9,22 @@ namespace ET.Server
     public static partial class AccountDBSystem
     {
         [EntitySystem]
-        private static void Awake(this ET.Server.AccountDB self, string account)
+        private static void Awake(this ET.Server.AccountDB self, string account, string pawssword)
         {
             self.Account = account;
-            self.Password = "sdfsdf3@#d";
+            self.Password = pawssword;
+        }
+        
+        /// <summary>
+        /// 检查密码是否正确
+        /// </summary>
+        /// <param name="self"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public static bool CheckPassword(this AccountDB self, string password)
+        {
+            self.ActiveAt = TimeInfo.Instance.ServerNow();
+            return self.Password == password;
         }
     }
 }

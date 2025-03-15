@@ -9,13 +9,13 @@ namespace ET.Server
     [FriendOfAttribute(typeof(ET.Server.AccountDB))]
     public static class LoginComponentSystem
     {
-        public static async ETTask<AccountDB> GetAccount(this LoginComponent self, string account)
+        public static async ETTask<AccountDB> GetAccount(this LoginComponent self, string account, string password)
         {
             var dbComponent = self.GetDBComponent();
             var accountDB = await dbComponent.QueryOne<AccountDB>(db => db.Account == account);
             if (accountDB == null)
             {
-                accountDB = self.AddChild<AccountDB, string>(account);
+                accountDB = self.AddChild<AccountDB, string, string>(account, password);
                 await dbComponent.Save(accountDB);
             }
             return accountDB;

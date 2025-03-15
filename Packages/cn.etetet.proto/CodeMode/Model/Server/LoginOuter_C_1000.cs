@@ -72,6 +72,12 @@ namespace ET
         [MemoryPackOrder(3)]
         public long PlayerId { get; set; }
 
+        /// <summary>
+        /// 消息码
+        /// </summary>
+        [MemoryPackOrder(4)]
+        public int Code { get; set; }
+
         public override void Dispose()
         {
             if (!this.IsFromPool)
@@ -83,6 +89,7 @@ namespace ET
             this.Error = default;
             this.Message = default;
             this.PlayerId = default;
+            this.Code = default;
 
             ObjectPool.Recycle(this);
         }

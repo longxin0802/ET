@@ -19,6 +19,8 @@ message NetClient2Main_Login // IResponse
 	string Message = 3;
 
 	int64 PlayerId = 4;
+
+	int32 Code = 5; // 消息码
 }
 
 // ResponseType G2C_Ping

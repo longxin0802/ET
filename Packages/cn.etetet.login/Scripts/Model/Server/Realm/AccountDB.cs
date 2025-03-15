@@ -6,10 +6,12 @@
 namespace ET.Server
 {
     [ChildOf(typeof(LoginComponent))]
-    public class AccountDB: Entity, IAwake<string>
+    public class AccountDB: Entity, IAwake<string, string>
     {
         public string Account;
         public string Password;
+
+        public long ActiveAt;
     }
 }
 
