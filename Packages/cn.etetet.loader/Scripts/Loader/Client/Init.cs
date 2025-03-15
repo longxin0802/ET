@@ -28,10 +28,9 @@ namespace ET
 
             GlobalConfig globalConfig = Resources.Load<GlobalConfig>("GlobalConfig");
             Options.Instance.SceneName = globalConfig.SceneName;
-			
+		
             World.Instance.AddSingleton<Logger>().Log = new UnityLogger();
             ETTask.ExceptionHandler += Log.Error;
-			
             World.Instance.AddSingleton<TimeInfo>();
             World.Instance.AddSingleton<FiberManager>();
 

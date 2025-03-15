@@ -9,11 +9,16 @@ namespace ET.Server
 	{
 		protected override async ETTask Run(Session session, C2R_Login request, R2C_Login response)
 		{
-			const int UserZone = 3; // 这里一般会有创角，选择区服，demo就不做这个操作了，直接放在3区
+			// 这里可以做账号密码校验，校验通过后分配一个区服
+			var loginComponent = session.Fiber().Root.GetComponent<LoginComponent>();
+			var accountDB = loginComponent.GetAccount(request.Account);
+			
+
+			// 这里一般会有创角，选择区服，demo就不做这个操作了，直接放在3区
+			const int UserZone = 3; 
 			// 随机分配一个Gate
 			StartSceneConfig config = RealmGateAddressHelper.GetGate(UserZone, request.Account);
 			Log.Debug($"gate address: {config}");
-			
 			// 向gate请求一个key,客户端可以拿着这个key连接gate
 			R2G_GetLoginKey r2GGetLoginKey = R2G_GetLoginKey.Create();
 			r2GGetLoginKey.Account = request.Account;
