@@ -11,16 +11,17 @@ namespace ET.Server
 		{
 			// 账号密码校验
 			var loginComponent = session.Fiber().Root.GetComponent<LoginComponent>();
-			var accountDB = await loginComponent.GetAccount(request.Account, request.Password);
-			if (accountDB.CheckPassword(request.Password))
-			{
-				// 校验通过后分配一个区服
-				await Login(session, request, response);
-			}
-			else
-			{
-				response.Error = ErrorCode.ERR_PasswordError;
-			}
+			// var accountDB = await loginComponent.GetAccount(request.Account, request.Password);
+			// if (accountDB.CheckPassword(request.Password))
+			// {
+			// 	// 校验通过后分配一个区服
+			// 	await Login(session, request, response);
+			// }
+			// else
+			// {
+			// 	response.Error = ErrorCode.ERR_PasswordError;
+			// }
+			await Login(session, request, response);
 
 			CloseSession(session).NoContext();
 		}
